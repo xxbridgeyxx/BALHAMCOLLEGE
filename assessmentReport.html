@@ -56,17 +56,17 @@
                             "<br>Assessment Name: " + assessment.AssessmentName +
                             "<br>Assessment Type: " + assessment.Type +
                             "<br>Weighting: " + assessment.Weighting+
-                            "<br>Maximum Mark: " + assessment.MaximumMark+
-                            "<br>CourseID: " + assessment.CourseID);
+                            "<br>Maximum Mark: " + assessment.MaximumMark);
+                        getCourseName(assessment.Course)
 
                         result = getResults(assessment.assessmentID);
                         k = 0;
                         while (k<result.length){
                             $("#assessment_report").append("<br />"
                                 +"<br>Mark: "+ result[k].Mark
-                                + "<br>Result Date : " + result[k].ResultDate
-                                + "<br>Student Last Name : " + result[k].LastName
-                                + "<br>Student First Name: " + result[k].Status);
+                                + "<br>Result Date : " + result[k].ResultDate);
+                            getStudentName(assessment[k].Enrolment)
+
                             k = k + 1;
                         }
 
@@ -91,9 +91,9 @@
 
                     j = 0;
                     while (j < data.length){
-                        result1 = data[j];
-                        if (result1.assessment == AssessmentID){
-                            result.push(result1);
+                        results = data[j];
+                        if (results.assessment == AssessmentID){
+                            result.push(results);
                         }
                         j = j + 1;
                     }
@@ -103,6 +103,47 @@
                 }
             });
             return result;
+        }
+
+        function getCourseName(CourseID){
+            $.ajax({
+                type: 'Get',
+                dataType: 'JSON',
+                async: false,
+                url: 'https://balham-college-db.herokuapp.com/api/Course/' + CourseID,
+                success: function (data) {
+                    // location.reload();
+                    $("#assessment_report").append("<br />"
+                        +"<br>Course Name: "+ data.CourseName);
+                    // getProgrammeName(data.Programme);
+
+
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return enrolments;
+
+        }
+
+        function getStudentName(StudentID){
+            $.ajax({
+                type: 'Get',
+                dataType: 'JSON',
+                async: false,
+                url: 'https://balham-college-db.herokuapp.com/api/Student/' + StudentID,
+                success: function (data) {
+                    // location.reload();
+                    $("#assessment_report").append("<br />" +"<br>Student Last Name: "+ data.LastName +"<br>Student First Name: "+ data.FirstName);
+
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+            return enrolments;
+
         }
         function print1(){
             window.print();

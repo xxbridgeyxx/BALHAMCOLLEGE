@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81666cdf-f9f7-44bb-9933-844b027af6a9" name="Default Changelist" comment="" />
+    <list default="true" id="81666cdf-f9f7-44bb-9933-844b027af6a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/issuesReport.2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/issuesReport.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecturerReport.2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assessmentReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/assessmentReport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assignLecterer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/courseReport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lecturerReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/assignlecturer2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newAssessmentReport.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recordIssue.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/researchreport.html" beforeDir="false" afterPath="$PROJECT_DIR$/researchreport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentreport.html" beforeDir="false" afterPath="$PROJECT_DIR$/studentreport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text.html" beforeDir="false" afterPath="$PROJECT_DIR$/text.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,13 +28,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1j4xUdV8irBwC5v2JzrbNjNGsl5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,6 +55,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -48,7 +69,7 @@
       <updated>1603077182588</updated>
       <workItem from="1603077185687" duration="1234000" />
       <workItem from="1603078703393" duration="95000" />
-      <workItem from="1603079699845" duration="20159000" />
+      <workItem from="1603079699845" duration="71829000" />
     </task>
     <servers />
   </component>
@@ -56,33 +77,82 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="202" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603759170901">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="202" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1603759170901" />
+    <state x="201" y="314" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1603745167992">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="201" y="314" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1603745167992" />
+    <state x="572" y="358" key="Github.ShareDialog" timestamp="1603252062276">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="572" y="358" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1603252062276" />
+    <state x="477" y="163" key="Github.UntrackedFilesDialog" timestamp="1603252107190">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="477" y="163" key="Github.UntrackedFilesDialog/41.23.1399.877@41.23.1399.877" timestamp="1603252107190" />
+    <state x="229" y="89" key="SettingsEditor" timestamp="1603339060995">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603339060995" />
     <state x="196" y="0" width="1280" height="900" key="dock-window-1" timestamp="1603164720158">
       <screen x="41" y="23" width="1399" height="877" />
     </state>
     <state x="196" y="0" width="1280" height="900" key="dock-window-1/41.23.1399.877@41.23.1399.877" timestamp="1603164720158" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/recordIssue.html</url>
-          <line>34</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/recordIssue.html</url>
-          <line>51</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/assignLecterer.html</url>
-          <line>218</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="909" y="0" width="531" height="900" key="dock-window-10" timestamp="1603749634285">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="909" y="0" width="531" height="900" key="dock-window-10/0.0.1440.900@0.0.1440.900" timestamp="1603749634285" />
+    <state x="742" y="0" width="698" height="900" key="dock-window-10/41.23.1399.877@41.23.1399.877" timestamp="1603749222907" />
+    <state x="470" y="23" width="970" height="877" key="dock-window-11" timestamp="1603750577395">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="470" y="23" width="970" height="877" key="dock-window-11/41.23.1399.877@41.23.1399.877" timestamp="1603750577395" />
+    <state x="940" y="0" width="500" height="900" key="dock-window-12" timestamp="1603759180779">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="940" y="0" width="500" height="900" key="dock-window-12/41.23.1399.877@41.23.1399.877" timestamp="1603759180779" />
+    <state x="750" y="0" width="690" height="900" key="dock-window-2" timestamp="1603696113693">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="750" y="0" width="690" height="900" key="dock-window-2/41.23.1399.877@41.23.1399.877" timestamp="1603696113693" />
+    <state x="259" y="23" width="1181" height="877" key="dock-window-3" timestamp="1603740980301">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="259" y="23" width="1181" height="877" key="dock-window-3/0.0.1440.900@0.0.1440.900" timestamp="1603709715796" />
+    <state x="259" y="23" width="1181" height="877" key="dock-window-3/41.23.1399.877@41.23.1399.877" timestamp="1603740980301" />
+    <state x="790" y="0" width="650" height="900" key="dock-window-4" timestamp="1603786205255">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="901" y="23" width="581" height="877" key="dock-window-4/0.0.1440.900@0.0.1440.900" timestamp="1603709715797" />
+    <state x="790" y="0" width="650" height="900" key="dock-window-4/41.23.1399.877@41.23.1399.877" timestamp="1603786205255" />
+    <state x="842" y="23" width="598" height="877" key="dock-window-5" timestamp="1603740261235">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="842" y="23" width="598" height="877" key="dock-window-5/41.23.1399.877@41.23.1399.877" timestamp="1603740261235" />
+    <state x="837" y="23" width="603" height="877" key="dock-window-6" timestamp="1603743160468">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="837" y="23" width="603" height="877" key="dock-window-6/0.0.1440.900@0.0.1440.900" timestamp="1603743160468" />
+    <state x="766" y="0" width="674" height="900" key="dock-window-6/41.23.1399.877@41.23.1399.877" timestamp="1603741760416" />
+    <state x="876" y="0" width="564" height="900" key="dock-window-7" timestamp="1603745817881">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="876" y="0" width="564" height="900" key="dock-window-7/0.0.1440.900@0.0.1440.900" timestamp="1603745817881" />
+    <state x="1051" y="0" width="389" height="900" key="dock-window-7/41.23.1399.877@41.23.1399.877" timestamp="1603745424183" />
+    <state x="8" y="23" width="1398" height="877" key="dock-window-8" timestamp="1603747633301">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="8" y="23" width="1398" height="877" key="dock-window-8/41.23.1399.877@41.23.1399.877" timestamp="1603747633301" />
+    <state x="820" y="0" width="620" height="900" key="dock-window-9" timestamp="1603747633321">
+      <screen x="41" y="23" width="1399" height="877" />
+    </state>
+    <state x="820" y="0" width="620" height="900" key="dock-window-9/41.23.1399.877@41.23.1399.877" timestamp="1603747633321" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1603329876823">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1603329876823" />
   </component>
 </project>

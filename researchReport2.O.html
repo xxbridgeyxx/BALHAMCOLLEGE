@@ -40,8 +40,8 @@
     </style>
     <script>
         $(document).ready(function() {
-
             $("#print_report_but").click(function () {
+
 
                 $.ajax({
                     type: 'Get',
@@ -52,27 +52,27 @@
 
                         i = 0;
                         while (i < data.length) {
-                            researchProject = data[i];
-                            $("#researchProject_report").append("<hr>" +
-                                // "<br>Lecturer Last Name: " + researchProject.Lecturer +
-                                // "<br>Lecturer First Name: " + researchProject.Lecturer +
-                                "<br>Research Project Description: " + researchProject.Description +
-                                "<br>Research Project Output: " + researchProject.Output +
-                                "<br>Research Project Start Date: " + researchProject.StartDate +
+                            Project = data[i];
+                            $("#research_report").append(
+                                "<hr>" + "<br>Research Project Description: " + Project.Description +
+                                "<br>Research Project Output: " + Project.Output +
+                                "<br>Research Project Start Date: " + Project.StartDate +
                                 "<br>");
-                            researchTopic = getResearchTopic(researchProject.ResearchProjectID);
+                            topics = getTopic(Project.ProjectID);
+                            getLecturerName(topics.Lecturer)
+
                             k = 0;
-                            while (k<researchTopic.length) {
-                                $("#researchProject_report").append("<br />"
-                                    + "<br>Description: " + researchTopic[k].Description +
-                                "<br>Research Topic Impact: " + researchTopic.Impact );
+                            while (k < topics.length) {
+                                $("#research_report").append("<br />"
+                                    + "<br>Description: " + topics[k].Description +
+                                    "<br>Research Topic Impact: " + topics.Impact);
                                 console.log("isthisworking");
+
                                 k = k + 1;
                             }
 
                             i = i + 1;
                         }
-
                     },
                     error: function (err) {
                         console.log(err);
@@ -80,11 +80,8 @@
                 });
             });
 
-
-
-
-            function getResearchTopic(ResearchProjectID) {
-                researchTopic = [];
+            function getTopic(ProjectID) {
+                topics = [];
                 $.ajax({
                     type: 'Get',
                     dataType: 'JSON',
@@ -95,9 +92,9 @@
 
                         j = 0;
                         while (j < data.length) {
-                            researchTopic1 = data[j];
-                            if (researchTopic1.researchProject == ResearchProjectID) {
-                                researchTopic.push(researchTopic1);
+                            topic = data[j];
+                            if (topic.Project == ProjectID) {
+                                topics.push(topic);
                             }
                             j = j + 1;
                         }
@@ -106,42 +103,71 @@
                         console.log(err);
                     }
                 });
-                return researchTopic;
+                return topics;
             }
 
-            // function getTopicInfo(getTopic){
+            function getLecturerName(LecturerID) {
+                $.ajax({
+                    type: 'Get',
+                    dataType: 'JSON',
+                    async: false,
+                    url: 'https://balham-college-db.herokuapp.com/api/Lecturer/' + LecturerID,
+                    success: function (data) {
+                        // location.reload();
+                        $("#research_report").append("<br />"
+                            + "<br>Lecturer Last Name: " + data.LastName
+                            + "<br>Lecturer First Name: " + data.FirstName);
+                        // getProgrammeName(data.Programme);
+
+
+                        getProgrammeName(data.Programme);
+
+
+                    },
+                    error: function (err) {
+                        console.log();
+                    }
+                });
+                return topics;
+
+            }
+
+            // function getProgrammeName(ProgrammeID){
             //     $.ajax({
             //         type: 'Get',
             //         dataType: 'JSON',
-            //         url: 'https://balham-college-db.herokuapp.com/api/ResearchTopic/' +getTopic,
-            //         success: function (data) {                     // location.reload();
-            //             $("#topic_description").val(data.Description);
-            //             $("#topic_imoact").val(data.Impact);
-            //
+            //         async: false,
+            //         url: 'https://balham-college-db.herokuapp.com/api/Programme/' + ProgrammeID,
+            //         success: function (data) {
+            //             // location.reload();
+            //             $("#student_report").append("<br />"
+            //                 +"<br>Programme Name: "+ data.ProgrammeName);
             //
             //         },
             //         error: function (err) {
             //             console.log(err);
             //         }
             //     });
+            //     return enrolments;
+            //
             // }
+
             function print1() {
                 window.print();
             }
-
-        });
-
+        })
     </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="center">
-    <h1>Print Research Report</h1>
-    <div id = "researchProject_report">
-        <button type="button" style="width: 250px" id="print_report_but"> Display Research Report</a></button>
+    <h1>Produce Research Project Report</h1>
+    <div id = "research_report">
+        <button type="button" style="width: 250px" id="print_report_but"> Display Assessment Report</a></button>
         <button type="button" ><a href="mainMenuBigEye.html"> Return</a></button>
-        <button onclick="print1()">Print Report</button>
+        <button onclick="print1()">Print</button>
 
     </div>
 </div>
 </body>
-</html>>
+</html>

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81666cdf-f9f7-44bb-9933-844b027af6a9" name="Default Changelist" comment="" />
+    <list default="true" id="81666cdf-f9f7-44bb-9933-844b027af6a9" name="Default Changelist" comment="new">
+      <change afterPath="$PROJECT_DIR$/researchReport2.O.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/issues.3.html" beforeDir="false" afterPath="$PROJECT_DIR$/issues.3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/issuesReport.2.html" beforeDir="false" afterPath="$PROJECT_DIR$/issuesReport.2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/researchreport.html" beforeDir="false" afterPath="$PROJECT_DIR$/researchreport.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,12 +60,24 @@
       <updated>1603077182588</updated>
       <workItem from="1603077185687" duration="1234000" />
       <workItem from="1603078703393" duration="95000" />
-      <workItem from="1603079699845" duration="72519000" />
+      <workItem from="1603079699845" duration="80026000" />
     </task>
+    <task id="LOCAL-00001" summary="new">
+      <created>1603854838969</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603854838971</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new" />
+    <option name="LAST_COMMIT_MESSAGE" value="new" />
   </component>
   <component name="WindowStateProjectService">
     <state x="202" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603759170901">
@@ -82,6 +100,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1603339060995" />
+    <state x="640" y="191" key="Vcs.Push.Dialog.v2" timestamp="1603854816362">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="640" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603854816362" />
+    <state x="947" y="372" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603854804794">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="947" y="372" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1603854804793" />
     <state x="196" y="0" width="1280" height="900" key="dock-window-1" timestamp="1603164720158">
       <screen x="41" y="23" width="1399" height="877" />
     </state>
@@ -108,11 +134,11 @@
     </state>
     <state x="259" y="23" width="1181" height="877" key="dock-window-3/0.0.1440.900@0.0.1440.900" timestamp="1603709715796" />
     <state x="259" y="23" width="1181" height="877" key="dock-window-3/41.23.1399.877@41.23.1399.877" timestamp="1603740980301" />
-    <state x="844" y="0" width="596" height="900" key="dock-window-4" timestamp="1603854574028">
+    <state x="794" y="0" width="646" height="900" key="dock-window-4" timestamp="1603928319256">
       <screen x="41" y="23" width="1399" height="877" />
     </state>
     <state x="901" y="23" width="581" height="877" key="dock-window-4/0.0.1440.900@0.0.1440.900" timestamp="1603709715797" />
-    <state x="844" y="0" width="596" height="900" key="dock-window-4/41.23.1399.877@41.23.1399.877" timestamp="1603854574028" />
+    <state x="794" y="0" width="646" height="900" key="dock-window-4/41.23.1399.877@41.23.1399.877" timestamp="1603928319256" />
     <state x="842" y="23" width="598" height="877" key="dock-window-5" timestamp="1603740261235">
       <screen x="41" y="23" width="1399" height="877" />
     </state>
@@ -139,5 +165,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1603329876823" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/issuesReport.2.html</url>
+          <line>113</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

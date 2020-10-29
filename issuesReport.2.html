@@ -40,6 +40,7 @@
     </style>
     <script>
         $(document).ready(function(){
+
             $("#print_report_but").click(function () {
                 console.log("holaMiha");
 
@@ -51,28 +52,29 @@
                     // location.reload();
 
                     i = 0;
-                    while (i < data.length){
-                        issues = data[i];
-                        $("#issues_report").append( "<hr"> +
-                            "<br>" +"Issue ID: " + issues.IssueID +
-                            "<br>"+ " Issue Description: " + issues.IssueDescription +
-                            "<br>"+" Issue Date: " + issues.IssueDate +
-                            "<br>" +" Action Taken: " + issues.ActionTaken+
-                            "<br>");
-                        enrolment = getEnrolments(issues.IssueID);
-console.log("oooooo");
-                        k = 0;
-                        while (k<enrolment.length){
-                            $("#issues_report").append("<hr />"
-                                +"<br> Enrolment ID: "+ enrolment[k].EnrolmentID
-                                // + "<br>Last Name: " + enrolment[k].Student
-                                // + "<br>First Name: " + enrolment[k].Student
-                                // + "<br>Course Name: " + enrolment[k].Course
-                                + "<br>" + "<hr>" );
-                            getEnrolmentNumber(enrolment[k].Course)
+                    while (i < data.length) {
+                        Issue = data[i];
+                        $("#issues_report").append("<hr>" +
+                            "<br>" + "Issue ID: " + Issue.IssueID +
+                            "<br>" + " Issue Description: " + Issue.IssueDescription +
+                            "<br>" + " Issue Date: " + Issue.IssueDate +
+                            "<br>" + " Action Taken: " + Issue.ActionTaken +
+                            +"<br> Enrolment ID: "+ Issue.Enrolment + "<br>");
+                        // enrolments = getEnrolments(Issue.IssueID);
+                        // k = 0;
+                        // while (k<enrolments.length) {
+                        //     $("#issues_report").append("<hr />"
+                        //         +"<br> Enrolment ID: "+ enrolments[k].Enrolment
+                        //     + "<br>" + "<hr>" );
 
-                            k = k + 1;
-                        }
+                            //         // + "<br>Last Name: " + enrolment[k].Student
+                        //         // + "<br>First Name: " + enrolment[k].Student
+                        //         // + "<br>Course Name: " + enrolment[k].Course
+                        //         + "<br>" + "<hr>" );
+                        // getEnrolmentNumber(enrolment.Issue);
+
+                        // k = k + 1;
+                    // }
 
                         i = i + 1;
                     }
@@ -83,48 +85,48 @@ console.log("oooooo");
             });
         });
 
-        function getEnrolments(IssueID) {
-            enrolment = [];
-            $.ajax({
-                type: 'Get',
-                dataType: 'JSON',
-                async: false,
-                url: 'https://balham-college-db.herokuapp.com/api/Enrolment/',
-                success: function (data) {
-                    // location.reload();
+            // function getEnrolments(IssueID) {
+            //     enrolments = [];
+            //     $.ajax({
+            //         type: 'Get',
+            //         dataType: 'JSON',
+            //         async: false,
+            //         url: 'https://balham-college-db.herokuapp.com/api/Enrolment/',
+            //         success: function (data) {
+            //             // location.reload();
+            //
+            //             j = 0;
+            //             while (j < data.length){
+            //                 enrolment = data[j];
+            //                 if (enrolment.Issue == IssueID){
+            //                     enrolments.push(enrolment);
+            //                 }
+            //                 j = j + 1;
+            //             }
+            //         },
+            //         error: function (err) {
+            //             console.log(err);
+            //         }
+            //     });
+            //     return enrolments;
+            // }
 
-                    j = 0;
-                    while (j < data.length){
-                        enrolments = data[j];
-                        if (enrolments.issues == IssueID){
-                            enrolment.push(enrolments);
-                        }
-                        j = j + 1;
-                    }
-                },
-                error: function (err) {
-                    console.log(err);
-                }
-            });
-            return enrolment;
-        }
-
-            function getEnrolmentNumber(EnrolmentID) {
-                $.ajax({
-                    type: 'Get',
-                    dataType: 'JSON',
-                    async: false,
-                    url: 'https://balham-college-db.herokuapp.com/api/Enrolment/' + EnrolmentID,
-                    success: function (data) {
-                        // location.reload();
-                        $("#issues_report").append("<br />"
-                            + "<br>Enrolment Number: " + data.EnrolmentNumber);
-                        // getProgrammeName(data.Programme);
-
-
-                    },
-                })
-            }
+            // function getEnrolmentNumber(EnrolmentID) {
+            //     $.ajax({
+            //         type: 'Get',
+            //         dataType: 'JSON',
+            //         async: false,
+            //         url: 'https://balham-college-db.herokuapp.com/api/Enrolment/' + EnrolmentID,
+            //         success: function (data) {
+            //             // location.reload();
+            //             $("#issues_report").append("<br />"
+            //                 + "<br>Enrolment Number: " + data.EnrolmentNumber);
+            //             // getProgrammeName(data.Programme);
+            //
+            //
+            //         },
+            //     })
+            // }
         function print1(){
             window.print();
         }
@@ -133,17 +135,18 @@ console.log("oooooo");
 
     </script>
 </head>
-<body>
+<form onsubmit="return false">
 <div class="center">
     <h1>Print Issues Report</h1>
-    <div id = "issues_report"></div>
+    <p id = "issues_report"></p>
     <button type="button" style="width: 250px" id="print_report_but"> Display Issues Report</a></button>
     <button type="button" ><a href=""> Return</a></button>
     <button onclick="print1()" style="width: 200px">Print Issues Report</button>
 
 
 </div>
+</form>
 
-</body>
+<!--</body>-->
 </html>
 

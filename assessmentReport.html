@@ -58,8 +58,9 @@
                             "<br>Weighting: " + assessment.Weighting+
                             "<br>Maximum Mark: " + assessment.MaximumMark);
                         getCourseName(assessment.Course)
+                        result = getResults(assessment.Course);
+                        getStudentResult(assessment.Course);
 
-                        result = getResults(assessment.assessmentID);
                         k = 0;
                         while (k<result.length){
                             $("#assessment_report").append("<br />"
@@ -110,20 +111,18 @@
                 type: 'Get',
                 dataType: 'JSON',
                 async: false,
-                url: 'https://balham-college-db.herokuapp.com/api/Course/' + CourseID,
+                url: 'https://balham-college-db.herokuapp.com/api/Course/' + CourseID + "/",
                 success: function (data) {
                     // location.reload();
-                    $("#assessment_report").append("<br />"
-                        +"<br>Course Name: "+ data.CourseName);
-                    // getProgrammeName(data.Programme);
 
-
+                    course = data;
+                    //
+                    $("#assessment_report").append("<br>" + "Course Name: " + course.CourseName +"<br>");
                 },
                 error: function (err) {
                     console.log(err);
                 }
             });
-            return enrolments;
 
         }
 
@@ -135,7 +134,9 @@
                 url: 'https://balham-college-db.herokuapp.com/api/Student/' + StudentID,
                 success: function (data) {
                     // location.reload();
-                    $("#assessment_report").append("<br />" +"<br>Student Last Name: "+ data.LastName +"<br>Student First Name: "+ data.FirstName);
+                    $("#assessment_report").append("<br />" +
+                        "<br>Student Last Name: "+ data.LastName +
+                        "<br>Student First Name: "+ data.FirstName);
 
                 },
                 error: function (err) {
@@ -145,6 +146,34 @@
             return enrolments;
 
         }
+        function getStudentResult(CourseID){
+            $.ajax({
+                type: 'Get',
+                dataType: 'JSON',
+                async: false,
+                url: 'https://balham-college-db.herokuapp.com/api/Enrolment/',
+                success: function (data) {
+                    // location.reload();
+
+                    j = 0;
+                    // course = data;
+
+                    while (j < data.length) {
+                        enrolment = data[j];
+                        if (enrolment.Course == CourseID) {
+                            console.log("did she work");
+                            getResults(enrolment.EnrolmentID);
+                            getStudentName(enrolment.Student);
+
+                        }
+
+                        j = j + 1;
+                    }
+                    //
+                }
+        })
+        }
+
         function print1(){
             window.print();
         }

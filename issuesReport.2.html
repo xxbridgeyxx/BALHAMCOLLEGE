@@ -59,22 +59,22 @@
                             "<br>" + " Issue Description: " + Issue.IssueDescription +
                             "<br>" + " Issue Date: " + Issue.IssueDate +
                             "<br>" + " Action Taken: " + Issue.ActionTaken +
-                            +"<br> Enrolment ID: "+ Issue.Enrolment + "<br>");
-                        // enrolments = getEnrolments(Issue.IssueID);
-                        // k = 0;
-                        // while (k<enrolments.length) {
-                        //     $("#issues_report").append("<hr />"
-                        //         +"<br> Enrolment ID: "+ enrolments[k].Enrolment
-                        //     + "<br>" + "<hr>" );
+                            "<br> Enrolment ID: "+ Issue.Enrolment + "<br>");
+                        enrolments = getEnrolments(Issue.IssueID);
+                        k = 0;
+                        while (k<enrolments.length) {
+                            $("#issues_report").append("<hr />"
+                                +"<br> Enrolment ID: "+ enrolments[k].Enrolment
+                            + "<br>" + "<hr>" );
 
-                            //         // + "<br>Last Name: " + enrolment[k].Student
-                        //         // + "<br>First Name: " + enrolment[k].Student
-                        //         // + "<br>Course Name: " + enrolment[k].Course
-                        //         + "<br>" + "<hr>" );
-                        // getEnrolmentNumber(enrolment.Issue);
+                                    // + "<br>Last Name: " + enrolment[k].Student
+                                // + "<br>First Name: " + enrolment[k].Student
+                                // + "<br>Course Name: " + enrolment[k].Course
+                                // + "<br>" + "<hr>" );
+                        getEnrolmentNumber(enrolment.Issue);
 
-                        // k = k + 1;
-                    // }
+                        k = k + 1;
+                    }
 
                         i = i + 1;
                     }
@@ -85,48 +85,48 @@
             });
         });
 
-            // function getEnrolments(IssueID) {
-            //     enrolments = [];
-            //     $.ajax({
-            //         type: 'Get',
-            //         dataType: 'JSON',
-            //         async: false,
-            //         url: 'https://balham-college-db.herokuapp.com/api/Enrolment/',
-            //         success: function (data) {
-            //             // location.reload();
-            //
-            //             j = 0;
-            //             while (j < data.length){
-            //                 enrolment = data[j];
-            //                 if (enrolment.Issue == IssueID){
-            //                     enrolments.push(enrolment);
-            //                 }
-            //                 j = j + 1;
-            //             }
-            //         },
-            //         error: function (err) {
-            //             console.log(err);
-            //         }
-            //     });
-            //     return enrolments;
-            // }
+            function getEnrolments(IssueID) {
+                enrolments = [];
+                $.ajax({
+                    type: 'Get',
+                    dataType: 'JSON',
+                    async: false,
+                    url: 'https://balham-college-db.herokuapp.com/api/Enrolment/',
+                    success: function (data) {
+                        // location.reload();
 
-            // function getEnrolmentNumber(EnrolmentID) {
-            //     $.ajax({
-            //         type: 'Get',
-            //         dataType: 'JSON',
-            //         async: false,
-            //         url: 'https://balham-college-db.herokuapp.com/api/Enrolment/' + EnrolmentID,
-            //         success: function (data) {
-            //             // location.reload();
-            //             $("#issues_report").append("<br />"
-            //                 + "<br>Enrolment Number: " + data.EnrolmentNumber);
-            //             // getProgrammeName(data.Programme);
-            //
-            //
-            //         },
-            //     })
-            // }
+                        j = 0;
+                        while (j < data.length){
+                            enrolment = data[j];
+                            if (enrolment.Issue == IssueID){
+                                enrolments.push(enrolment);
+                            }
+                            j = j + 1;
+                        }
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+                return enrolments;
+            }
+
+            function getEnrolmentNumber(EnrolmentID) {
+                $.ajax({
+                    type: 'Get',
+                    dataType: 'JSON',
+                    async: false,
+                    url: 'https://balham-college-db.herokuapp.com/api/Enrolment/' + EnrolmentID,
+                    success: function (data) {
+                        // location.reload();
+                        $("#issues_report").append("<br />"
+                            + "<br>Enrolment Number: " + data.EnrolmentNumber);
+                        // getProgrammeName(data.Programme);
+
+
+                    },
+                })
+            }
         function print1(){
             window.print();
         }

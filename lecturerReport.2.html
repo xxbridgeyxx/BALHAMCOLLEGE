@@ -43,6 +43,7 @@
             $.ajax({
                 type: 'Get',
                 dataType: 'JSON',
+                // async: 'false',
                 url: 'https://balham-college-db.herokuapp.com/api/Lecturer/',
                 success: function (data) {
                     // location.reload();
@@ -52,9 +53,9 @@
                     while (i < data.length){
 
                         lecturer = data[i];
-                        var assignmentID = lecturer.assignment;
-                        assignmentcount = getCountAssignment(assignmentID);
-                        console.log(assignmentcount);
+                        // var assignmentID = lecturer.assignment;
+                        // assignmentcount = getCountAssignment(assignmentID);
+                        console.log(getCountAssignment);
                         $("#lecturer_report").append("<hr>" +
                             "<br>" + "Lecturer ID: " + lecturer.LecturerID +
                             "<br>" + "Lecturer Last Name: " + lecturer.LastName +
@@ -66,8 +67,10 @@
                             "<br>" + "Lecturer Email Address: " + lecturer.EmailAddress +
                             "<br>" + "Lecturer Ranking: " + lecturer.Ranking +
                             "<br>" + "Lecturer Type: " + lecturer.Type +
-                            "<br>" + "Count of Assignments : " + assignmentcount +
+                            // "<br>" + "Count of Assignments : " + assignmentcount +
                             "<hr>");
+                        getCountAssignment(lecturer.LecturerID);
+
                         i = i + 1;
                     }
                 },
@@ -75,27 +78,37 @@
                     console.log(err);
                 }
             });
+
+
+            function getCountAssignment(LecturerID){
+                countAssignments = 0;
+
+                console.log(LecturerID);
+                $.ajax({
+                    type: 'Get',
+                    dataType: 'JSON',
+                    // async: 'false' ,
+                    url: 'https://balham-college-db.herokuapp.com/api/Assignment/',
+                    success: function (data) {
+                        // location.reload();
+                        j = 0;
+                        while (j < data.length){
+                            assignment = data[j];
+                            if (assignment.Lecturer == LecturerID){
+                                countAssignments = countAssignments+ 1;
+                            }
+                            j = j + 1;
+                        }
+                        $("#lecturer_report").append("<hr>" + "Total Count Assignments: " + countAssignments );
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+
+            }
         });
 
-        function getCountAssignment(assignmentID) {
-            assignmentcount = 0;
-            $.ajax({
-                type: 'Get',
-                dataType: 'JSON',
-                async: false,
-                url: 'https://balham-college-db.herokuapp.com/api/Assignment/'+assignmentID+'/',
-                success: function (data) {
-                    // location.reload();
-                    assignmentcount = data.name;
-
-
-                },
-                error: function (err) {
-                    // console.log(err);
-                }
-            });
-            return assignmentcount;
-        }
     </script>
 </head>
 <body>

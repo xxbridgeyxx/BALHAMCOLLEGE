@@ -48,8 +48,7 @@
                     dataType: 'JSON',
                     url: 'https://balham-college-db.herokuapp.com/api/ResearchProject/',
                     success: function (data) {
-                        // location.reload();
-
+                        console.log(data);
                         i = 0;
                         while (i < data.length) {
                             Project = data[i];
@@ -59,14 +58,14 @@
                                 "<br>Research Project Start Date: " + Project.StartDate +
                                 "<br>");
                             topics = getTopic(Project.ProjectID);
-                            getLecturerName(topics.Lecturer)
+                            getLecturerName(Project.Lecturer);
+
 
                             k = 0;
                             while (k < topics.length) {
                                 $("#research_report").append("<br />"
-                                    + "<br>Description: " + topics[k].Description +
-                                    "<br>Research Topic Impact: " + topics.Impact);
-                                console.log("isthisworking");
+                                    + "<br>Research Topic Description: " + topics[k].Description +
+                                    "<br>Research Topic Impact: " + topics[k].Impact);
 
                                 k = k + 1;
                             }
@@ -95,6 +94,8 @@
                             topic = data[j];
                             if (topic.Project == ProjectID) {
                                 topics.push(topic);
+                                // getLecturerName(topics.Enrolment)
+
                             }
                             j = j + 1;
                         }
@@ -114,43 +115,21 @@
                     url: 'https://balham-college-db.herokuapp.com/api/Lecturer/' + LecturerID,
                     success: function (data) {
                         // location.reload();
+                        console.log(data);
+                        // lecturer = data;
+
                         $("#research_report").append("<br />"
-                            + "<br>Lecturer Last Name: " + data.LastName
-                            + "<br>Lecturer First Name: " + data.FirstName);
-                        // getProgrammeName(data.Programme);
-
-
-                        getProgrammeName(data.Programme);
-
+                            + "<br>" + "Lecturer Last Name: " + data.LastName
+                            + "<br>" + "Lecturer First Name: " + data.FirstName);
 
                     },
                     error: function (err) {
                         console.log();
                     }
                 });
-                return topics;
+                return Project;
 
             }
-
-            // function getProgrammeName(ProgrammeID){
-            //     $.ajax({
-            //         type: 'Get',
-            //         dataType: 'JSON',
-            //         async: false,
-            //         url: 'https://balham-college-db.herokuapp.com/api/Programme/' + ProgrammeID,
-            //         success: function (data) {
-            //             // location.reload();
-            //             $("#student_report").append("<br />"
-            //                 +"<br>Programme Name: "+ data.ProgrammeName);
-            //
-            //         },
-            //         error: function (err) {
-            //             console.log(err);
-            //         }
-            //     });
-            //     return enrolments;
-            //
-            // }
 
             function print1() {
                 window.print();

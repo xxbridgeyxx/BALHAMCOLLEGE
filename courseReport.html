@@ -45,31 +45,36 @@
                 $.ajax({
                     type: 'Get',
                     dataType: 'JSON',
-                    // async:false,
+                    async:false,
                     url: 'https://balham-college-db.herokuapp.com/api/Course/',
                     success: function (data) {
                         // location.reload();
 
-                        i = 0;
+                        var i = 0;
                         while (i < data.length){
                             course = data[i];
                             // if (cases.Status == 'Complete')
-                            {
-                                $("#course_report").append(
+                            enrolmentNumber = getTotalEnrolments(course.CourseID);
+                            assessmentNumber = getCountAssessments(course.CourseID);
+                            console.log(enrolmentNumber);
+                                $("#course_report").append("<hr>" +
                                     "<br>" + "Course ID: " + course.CourseID +
                                     "<br>"+ " Course Name: " + course.CourseName +
                                     "<br>"+" Course Credits: " + course.Credits +
                                     "<br>" +" Course Status: " + course.Status+
                                     "<br>" +" Course Fee: " + course.Fee+
-                                    "<br>" +" Programme Name: " + course.Programme+
-                                    "<br>");
+                                    "<br>" +" Total Enrolment Number: " + enrolmentNumber+
+                                    "<br>" +" Total Assessment Number: " + assessmentNumber+
+                                    "<br>" + "<hr>");
                                 // getClientReport(cases.Client);
-                                getTotalEnrolments(course.CourseID, course.assessmentNumber);
+
+                                getProgrammeName(course.Programme);
+
                                 $("#course_report").append();
 
 
 
-                            }
+
                             i = i + 1;
                         }
                     },
@@ -78,75 +83,19 @@
                     }
                 });
             });
-            // function getClientReport(ClientID){
-            //     $.ajax({
-            //         type: 'Get',
-            //         dataType: 'JSON',
-            //         async: false,
-            //         url: 'https://bigeye4.herokuapp.com/api/clients/' + ClientID + "/",
-            //         success: function (data) {
-            //             // location.reload();
-            //
-            //             clients = data;
-            //             //
-            //             $("#cases_report").append(
-            //                 "<br>" +"Client ID: " + clients.ClientID +
-            //                 "<br>" + " Last Name: " + clients.LastName +
-            //                 "<br>" + " First Name: " + clients.FirstName +
-            //                 "<br>" + " Street Address: " + clients.StreetAddress +
-            //                 "<br>" + " Suburb " + clients.Suburb +
-            //                 "<br>" + " City " +clients.City+"<br>" );
-            //         },
-            //         error: function (err) {
-            //             console.log(err);
-            //         }
-            //     });
-            //
-            // }
 
-            function getTotalEnrolments(CourseID, assessmentNumber){
-                countEnrolments = 0;
-                countAssessments = 100;
-                $.ajax({
-                    type: 'Get',
-                    dataType: 'JSON',
-                    // async: true ,
-                    url: 'https://balham-college-db.herokuapp.com/api/Enrolment/',
-                    success: function (data) {
-                        // location.reload();
-                        totalCountEnrolment = 0;
-                        i = 0;
-                        while (i < data.length){
-                            enrolements = data[i];
-                            if (enrolements.Courses == CourseID){
-                                getCountAssessments(enrolements.Assessment);
-                                totalCountEnrolment = totalCountEnrolment + Course * enrolements.EnrolmentID;
-                            }
-                            i = i + 1;
-                        }
-                        $("#course_report").append("<hr>" + "Total Count Enrolments: " + totalCountEnrolment +  " Total Count Assignments: " + totalCountEnrolment + assessmentNumber );
-
-
-
-                    },
-                    error: function (err) {
-                        console.log(err);
-                    }
-                });
-
-            }
-
-
-            function getCountAssessments(InvID) {
-                hourlyRate = 0;
+            function getProgrammeName(ProgrammeID) {
+                assessments = 0;
                 $.ajax({
                     type: 'Get',
                     dataType: 'JSON',
                     async: false,
-                        url: 'https://balham-college-db.herokuapp.com/api/Assessment/' + InvID + "/",
+                    url: 'https://balham-college-db.herokuapp.com/api/Programme/' + ProgrammeID + "/",
                     success: function (data) {
                         // location.reload();
-                        courseNumber = data.Course;
+                        programme = data;
+                        $("#course_report").append(
+                            "<br>" +"Programme Name: " + programme.ProgrammeName +"<br>");
 
                     },
                     error: function (err) {
@@ -154,6 +103,63 @@
                     }
                 });
             }
+            function getTotalEnrolments(CourseID){
+                countEnrolments = 0;
+                $.ajax({
+                    type: 'Get',
+                    dataType: 'JSON',
+                    async: false ,
+                    url: 'https://balham-college-db.herokuapp.com/api/Enrolment/',
+                    success: function (data) {
+                        // location.reload();
+                        var j = 0;
+                        while (j < data.length){
+                            enrolment = data[j];
+                            if (enrolment.Course == CourseID){
+                                console.log(countEnrolments);
+                                countEnrolments = countEnrolments+ 1;
+                            }
+                            j = j + 1;
+                        }
+                        // $("#course_report").append("<hr>" + "Total Count Enrolments: " + countEnrolments );
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+                return countEnrolments;
+            }
+
+
+            function getCountAssessments(CourseID){
+                assessmentNumber = 0;
+
+                console.log(CourseID);
+                $.ajax({
+                    type: 'Get',
+                    dataType: 'JSON',
+                    async: false ,
+                    url: 'https://balham-college-db.herokuapp.com/api/Assessment/',
+                    success: function (data) {
+                        // location.reload();
+                        var j = 0;
+                        while (j < data.length){
+                            assessment = data[j];
+                            if (assessment.Course == CourseID){
+                                assessmentNumber = assessmentNumber+ 1;
+                            }
+                            j = j + 1;
+                        }
+                         },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+                return assessmentNumber;
+            }
+
+
+
 
         });
     </script>

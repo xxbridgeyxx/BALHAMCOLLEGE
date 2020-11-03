@@ -46,6 +46,7 @@
 
                 $.ajax({
                 type: 'Get',
+                    // async: false,
                 dataType: 'JSON',
                 url: 'https://balham-college-db.herokuapp.com/api/Issue/',
                 success: function (data) {
@@ -54,27 +55,23 @@
                     i = 0;
                     while (i < data.length) {
                         Issue = data[i];
+                        enrolment = getEnrolment(Issue.Enrolment);
+                        course = getCourseInfo(enrolment.Course);
+                        student = getStudent(enrolment.Student);
+                        console.log(enrolment);
                         $("#issues_report").append("<hr>" +
                             "<br>" + "Issue ID: " + Issue.IssueID +
                             "<br>" + " Issue Description: " + Issue.IssueDescription +
                             "<br>" + " Issue Date: " + Issue.IssueDate +
                             "<br>" + " Action Taken: " + Issue.ActionTaken +
-                            "<br> Enrolment ID: "+ Issue.Enrolment + "<br>");
-                        enrolments = getEnrolments(Issue.IssueID);
-                        k = 0;
-                        while (k<enrolments.length) {
-                            $("#issues_report").append("<hr />"
-                                +"<br> Enrolment ID: "+ enrolments[k].Enrolment
-                            + "<br>" + "<hr>" );
+                            "<br>" + " Enrolment Number: " + Issue.Enrolment +
+                            "<br>" + " Course: " + course.CourseName +
+                            "<br>" + " Student Lastname: " + student.LastName +
+                            "<br>" + " Student Firstname: " + student.FirstName +
+                            "<br>" + "<br>");
 
-                                    // + "<br>Last Name: " + enrolment[k].Student
-                                // + "<br>First Name: " + enrolment[k].Student
-                                // + "<br>Course Name: " + enrolment[k].Course
-                                // + "<br>" + "<hr>" );
-                        getEnrolmentNumber(enrolment.Issue);
-
-                        k = k + 1;
-                    }
+                        getCourseName(Issue.Course);
+                        console.log(getCourseName);
 
                         i = i + 1;
                     }
@@ -85,12 +82,13 @@
             });
         });
 
-            function getEnrolments(IssueID) {
+
+            function getEnrolments(EnrolmentID) {
                 enrolments = [];
                 $.ajax({
                     type: 'Get',
                     dataType: 'JSON',
-                    async: false,
+                    async: 'false',
                     url: 'https://balham-college-db.herokuapp.com/api/Enrolment/',
                     success: function (data) {
                         // location.reload();
@@ -98,7 +96,7 @@
                         j = 0;
                         while (j < data.length){
                             enrolment = data[j];
-                            if (enrolment.Issue == IssueID){
+                            if (enrolment.Issue == EnrolmentID){
                                 enrolments.push(enrolment);
                             }
                             j = j + 1;
@@ -108,32 +106,45 @@
                         console.log(err);
                     }
                 });
-                return enrolments;
+                return Issue;
             }
 
-            function getEnrolmentNumber(EnrolmentID) {
+
+            function getCourseName(CourseID){
                 $.ajax({
                     type: 'Get',
                     dataType: 'JSON',
-                    async: false,
-                    url: 'https://balham-college-db.herokuapp.com/api/Enrolment/' + EnrolmentID,
+                    async: 'false',
+                    url: 'https://balham-college-db.herokuapp.com/api/Course/' + CourseID + "/",
                     success: function (data) {
                         // location.reload();
-                        $("#issues_report").append("<br />"
-                            + "<br>Enrolment Number: " + data.EnrolmentNumber);
-                        // getProgrammeName(data.Programme);
 
-
+                        course = data;
+                        //
+                        $("#issues_report").append("<br>" + "Course Name: " + course.CourseName +"<br>");
+                        console.log("hollllaaaaaa");
                     },
-                })
+
+                    error: function (err) {
+                        // console.log(err);
+                    }
+
+                });
+
+                return Issue;
+
+
             }
-        function print1(){
+
+            function print1(){
             window.print();
         }
 
         });
 
     </script>
+    <script src="js/script.js"></script>
+    <script src="https://marshall942.github.io/BalhamCollege/js/script.js"></script>
 </head>
 <form onsubmit="return false">
 <div class="center">

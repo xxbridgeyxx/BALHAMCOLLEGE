@@ -4,7 +4,10 @@
     <list default="true" id="81666cdf-f9f7-44bb-9933-844b027af6a9" name="Default Changelist" comment="new">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assessmentReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/assessmentReport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/courseReport.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/issuesReport.2.html" beforeDir="false" afterPath="$PROJECT_DIR$/issuesReport.2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lecturerReport.2.html" beforeDir="false" afterPath="$PROJECT_DIR$/lecturerReport.2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/researchReport2.O.html" beforeDir="false" afterPath="$PROJECT_DIR$/researchReport2.O.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +61,7 @@
       <updated>1603077182588</updated>
       <workItem from="1603077185687" duration="1234000" />
       <workItem from="1603078703393" duration="95000" />
-      <workItem from="1603079699845" duration="80960000" />
+      <workItem from="1603079699845" duration="98135000" />
     </task>
     <task id="LOCAL-00001" summary="new">
       <created>1603854838969</created>
@@ -132,11 +135,11 @@
     </state>
     <state x="259" y="23" width="1181" height="877" key="dock-window-3/0.0.1440.900@0.0.1440.900" timestamp="1603709715796" />
     <state x="259" y="23" width="1181" height="877" key="dock-window-3/41.23.1399.877@41.23.1399.877" timestamp="1603740980301" />
-    <state x="1105" y="0" width="335" height="900" key="dock-window-4" timestamp="1603930707980">
+    <state x="1347" y="0" width="93" height="900" key="dock-window-4" timestamp="1604283107602">
       <screen x="41" y="23" width="1399" height="877" />
     </state>
     <state x="901" y="23" width="581" height="877" key="dock-window-4/0.0.1440.900@0.0.1440.900" timestamp="1603709715797" />
-    <state x="1105" y="0" width="335" height="900" key="dock-window-4/41.23.1399.877@41.23.1399.877" timestamp="1603930707980" />
+    <state x="1347" y="0" width="93" height="900" key="dock-window-4/41.23.1399.877@41.23.1399.877" timestamp="1604283107602" />
     <state x="842" y="23" width="598" height="877" key="dock-window-5" timestamp="1603740261235">
       <screen x="41" y="23" width="1399" height="877" />
     </state>
@@ -163,5 +166,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1440.900@0.0.1440.900" timestamp="1603329876823" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/researchreport.html</url>
+          <line>69</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

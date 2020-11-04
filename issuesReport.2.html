@@ -9,33 +9,8 @@
             crossorigin="anonymous">
     </script>
     <style>
-        button {
-            width: 20%;
-            height: 10%;
-        }
-        body{
-            font-family: "Arial";
-        }
-
-        .center{
-            margin: auto;
-            width: 60%;
-            border: 3px solid palevioletred;
-            padding: 10px;
-        }
-
-        h1{
-            text-align: center;
-        }
-
-        label{
-            text-align: right;
-            width: 140px;
-            display: block;
-            float: left;
-            clear: left;
-            margin-right: 3px;
-            cursor: pointer;
+        #issues_report{
+            color: ghostwhite;
         }
     </style>
     <script>
@@ -145,19 +120,40 @@
     </script>
     <script src="js/script.js"></script>
     <script src="https://marshall942.github.io/BalhamCollege/js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<form onsubmit="return false">
-<div class="center">
-    <h1>Print Issues Report</h1>
-    <p id = "issues_report"></p>
-    <button type="button" style="width: 250px" id="print_report_but"> Display Issues Report</a></button>
-    <button type="button" ><a href=""> Return</a></button>
-    <button onclick="print1()" style="width: 200px">Print Issues Report</button>
+<body>
+<div id="container">
+
+    <h1>Produce Issues Report</h1>
+    <hr>
+    <br>
+
+
+    <div id = "content">
+
+
+        <div class="fields">
+            <label id="issues_report"></label>
+
+        </div>
+
+    </div>
+    <hr>
+    <h3>Copyrighted ©Balham College</h3>
+    <hr>
+    <br>
+    <div id = buttonCase>
+
+        <button type="button" id="print_report_but" class="actionButton">Generate Report</button>
+        <a href="MainMenu.html"><button type="button" id = "returnButton" >Return</button></a>
+
+    </div>
+    <br>
+
 
 
 </div>
-</form>
-
-<!--</body>-->
+</body>
 </html>
 

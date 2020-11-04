@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Assign Lecturer</title>
-    <style type="text/css">
-        button {
-            width: 20%;
-            height: 10%;
+    <style>
+        #research_report{
+            color: ghostwhite;
         }
     </style>
     <script
@@ -129,9 +128,9 @@
                         console.log("hollloooo");
                         errors = JSON.parse(err.responseText);
                         console.log(errors);
-                        $("#role_input_err").text(errors.role);
-                        // $("#lecturer_id_input_err").text(errors.lecturer);
-                        // $("#assignment_id_input_err").text(errors.assignment);
+                        $("#lecturer_id_input_err").text(errors.Lecturer);
+                        $("#course_input_err").text(errors.Course);
+                        $("#role_input_err").text(errors.Role);
                     }
 
                 });
@@ -139,52 +138,73 @@
             })
         });
     </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="center">
+<div id="container">
     <h1>Assign a Lecturer</h1>
-    <form onsubmit="return false">
-        <p><label> Course : </label>
+    <div id = "content">
+
+        <hr class = "subHR">
+        <h2>Course</h2>
+        <hr class = "subHR">
+
+        <div class="fields">
+
+        <form onsubmit="return false">
+        <p>
             <select id="course_id_input">
-                <option value="">Select one</option>
+                <option value="">Select Course</option>
             </select>
         </p>
-        <p><label> Course ID: </label><input id="course_id" type="text" maxlength="25" size="25"></p>
-        <p id="courseid_input_err"></p>
-        <p><label> Course Name: </label><input id="course_name" type="text" maxlength="25" size="25"></p>
-        <p id="coursename_input_err"></p>
-        <p><label> Course Credits: </label><input id="course_credits" type="number" maxlength="5" size="5"></p>
-        <p id="credits_input_err"></p>
+            <p id="course_input_err"></p>
 
-        <p><label> Lecturer : </label>
+
+            <p><input id="course_id" type="text" maxlength="25" size="25" placeholder="Course ID"></p>
+        <p id="courseid_input_err"></p>
+        <p><input id="course_name" type="text" maxlength="25" size="25" placeholder="Course Name"></p>
+        <p id="coursename_input_err"></p>
+        <p><input id="course_credits" type="number" maxlength="5" size="5" placeholder="Course Credits"></p>
+        <p id="credits_input_err">
+        </p>
+        </form>
+        </div>
+        <hr class = "subHR">
+        <h2>Lecturer</h2>
+        <hr class = "subHR">
+        <div class="fields">
+
+
+        <p>
             <select id="lecturer_id_input">
-                <option value="">Select one</option>
+                <option value="">Select Lecturer</option>
             </select>
         <p id="lecturer_id_input_err"></p>
 
         </p>
-        <p><label>Lecturer ID:</label><input id="lecturer_id" type="text" maxlength="" size="25"></p>
+        <p><input id="lecturer_id" type="text" maxlength="" size="25" placeholder="Lecturer ID"></p>
 <!--        <p id="lecturerid_input_err"></p>-->
-        <p><label> Lecturer Last Name: </label><input id="lecturer_lastname" type="text" maxlength="25" size="25"></p>
+        <p><input id="lecturer_lastname" type="text" maxlength="25" size="25" placeholder="Lecturer Last Name"></p>
 <!--        <p id="lastname_input_err"></p>-->
-        <p><label> Lecturer First Name: </label><input id="lecturer_firstname" type="text" maxlength="25" size="25"></p>
+        <p><input id="lecturer_firstname" type="text" maxlength="25" size="25" placeholder="Lecturer First Name"></p>
 <!--        <p id="firstname_input_err"></p>-->
-        <p><label> Lecturer Role : </label>
+        <p>
             <select id="lecturer_role">
-                <option value="">Select one</option>
+                <option value="">Select Role</option>
                 <option value="Primary">Primary</option>
                 <option value="Secondary">Secondary</option>
             </select>
                     <p id="role_input_err"></p>
 
-
-            <!--        <p id="role_input_err"></p>-->
-
+        </div>
+        <div id = buttonCase>
 
         <button type="button" id="assign_lecturer_but">Assign Lecturer</button>
         <button type="button"><a href="mainMenuBigEye.html"> Return</a></button>
         <p></p>
-    </form>
+        </div>
+    </div>
 </div>
+
 </body>
 </html>

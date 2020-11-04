@@ -8,34 +8,13 @@
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
             crossorigin="anonymous">
     </script>
-    <style type="text/css">
-        button {
-            width: 20%;
-            height: 10%;
+    <style>
+        #assessment_report{
+            color: ghostwhite;
         }
-        body{
-            font-family: "Arial";
-        }
-
-        .center{
-            margin: auto;
-            width: 60%;
-            border: 3px solid palevioletred;
-            padding: 10px;
-        }
-
-        h1{
-            text-align: center;
-        }
-
-        label{
-            text-align: right;
-            width: 140px;
-            display: block;
-            float: left;
-            clear: left;
-            margin-right: 3px;
-            cursor: pointer;
+        #h3{
+            color: maroon;
+            text-decoration: underline;
         }
     </style>
     <script>
@@ -51,7 +30,8 @@
                     while (i < data.length){
                         assessment = data[i];
                         $("#assessment_report").append("<hr>" +
-                            "<br>Assessment ID: " + assessment.AssessmentID +
+                            "<h3 id='h3'>Assessment</h3>" +
+                            "Assessment ID: " + assessment.AssessmentID +
                             "<br>Assessment Number: " + assessment.AssessmentNumber +
                             "<br>Assessment Name: " + assessment.AssessmentName +
                             "<br>Assessment Type: " + assessment.Type +
@@ -117,7 +97,9 @@
 
                     course = data;
                     //
-                    $("#assessment_report").append("<br>" + "Course Name: " + course.CourseName +"<br>");
+                    $("#assessment_report").append( "<br>"+
+                        "<h3 id='h3'>Course</h3>" +
+                        "Course Name: " + course.CourseName +"<br>");
                 },
                 error: function (err) {
                     console.log(err);
@@ -134,8 +116,9 @@
                 url: 'https://balham-college-db.herokuapp.com/api/Student/' + StudentID,
                 success: function (data) {
                     // location.reload();
-                    $("#assessment_report").append("<br />" +
-                        "<br>Student Last Name: "+ data.LastName +
+                    $("#assessment_report").append(
+                        "<h3 id='h3'>Student</h3>" +
+                         " Last Name: "+ data.LastName +
                         "<br>Student First Name: "+ data.FirstName);
 
                 },
@@ -178,16 +161,40 @@
             window.print();
         }
     </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="center">
-    <h1>Print Assessment Report</h1>
-    <div id = "assessment_report">
-        <button type="button" style="width: 250px"><a href=""> Display Assessment Report</a></button>
-        <button type="button" ><a href="mainMenuBigEye.html"> Return</a></button>
-        <button onclick="print1()">Print</button>
+
+<div id="container">
+
+    <h1>Produce Resarch Report</h1>
+    <hr>
+    <br>
+
+
+    <div id = "content">
+
+
+        <div class="fields">
+            <label id="assessment_report"></label>
+
+        </div>
 
     </div>
+    <hr>
+    <h3>Copyrighted ©Balham College</h3>
+    <hr>
+    <br>
+    <div id = buttonCase>
+
+        <button type="button" id="print_report_but" class="actionButton">Generate Report</button>
+        <a href="MainMenu.html"><button type="button" id = "returnButton" >Return</button></a>
+
+    </div>
+    <br>
+
+
+
 </div>
 </body>
 </html>

@@ -4,33 +4,8 @@
     <meta charset="UTF-8">
     <title>Produce Courses Report </title>
     <style type="text/css">
-        button {
-            width: 20%;
-            height: 10%;
-        }
-        body{
-            font-family: "Arial";
-        }
-
-        .center{
-            margin: auto;
-            width: 60%;
-            border: 3px solid palevioletred;
-            padding: 10px;
-        }
-
-        h1{
-            text-align: center;
-        }
-
-        label{
-            text-align: right;
-            width: 140px;
-            display: block;
-            float: left;
-            clear: left;
-            margin-right: 3px;
-            cursor: pointer;
+        #course_report{
+            color: ghostwhite;
         }
     </style>
     <script
@@ -57,12 +32,12 @@
                             enrolmentNumber = getTotalEnrolments(course.CourseID);
                             assessmentNumber = getCountAssessments(course.CourseID);
                             console.log(enrolmentNumber);
-                                $("#course_report").append("<hr>" +
+                                $("#course_report").append(
                                     "<br>" + "Course ID: " + course.CourseID +
                                     "<br>"+ " Course Name: " + course.CourseName +
                                     "<br>"+" Course Credits: " + course.Credits +
                                     "<br>" +" Course Status: " + course.Status+
-                                    "<br>" +" Course Fee: " + course.Fee+
+                                    "<br>" +" Course Fee: " + course.Fee+ "<hr>" +
                                     "<br>" +" Total Enrolment Number: " + enrolmentNumber+
                                     "<br>" +" Total Assessment Number: " + assessmentNumber+
                                     "<br>" + "<hr>");
@@ -95,13 +70,14 @@
                         // location.reload();
                         programme = data;
                         $("#course_report").append(
-                            "<br>" +"Programme Name: " + programme.ProgrammeName +"<br>");
+                            "<br>" +"Programme Name: " + programme.ProgrammeName +"<br>" + "<hr>");
 
                     },
                     error: function (err) {
                         console.log(err);
                     }
                 });
+                return assessmentNumber;
             }
             function getTotalEnrolments(CourseID){
                 countEnrolments = 0;
@@ -163,16 +139,39 @@
 
         });
     </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="center">
-    <h1>Print Courses Report</h1>
-    <div id = "course_report">
-        <button type="button" style="width: 250px" id="print_report_but"> Display Assessment Report</a></button>
-        <button type="button" ><a href="mainMenuBigEye.html"> Return</a></button>
-        <button onclick="print1()">Print</button>
+<div id="container">
+
+    <h1>Produce Issues Report</h1>
+    <hr>
+    <br>
+
+
+    <div id = "content">
+
+
+        <div class="fields">
+            <label id="course_report"></label>
+
+        </div>
 
     </div>
+    <hr>
+    <h3>Copyrighted ©Balham College</h3>
+    <hr>
+    <br>
+    <div id = buttonCase>
+
+        <button type="button" id="print_report_but" class="actionButton">Generate Report</button>
+        <a href="MainMenu.html"><button type="button" id = "returnButton" >Return</button></a>
+
+    </div>
+    <br>
+
+
+
 </div>
 </body>
 </html>
